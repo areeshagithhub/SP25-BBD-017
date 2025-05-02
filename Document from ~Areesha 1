@@ -1,0 +1,291 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "6dbdb63a-438f-4f9a-8b3f-a612e6668413",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Name: Areesha\n",
+      "Age: 17\n",
+      "city: lahore\n",
+      "Hobbies: ['cooking', 'painting']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# part(a)\n",
+    "person={\n",
+    "    'name':'Areesha',\n",
+    "    'age':17,\n",
+    "    'city':'lahore',\n",
+    "    'hobbies':['cooking','painting'],\n",
+    "}\n",
+    "print(f'Name:',person['name'])\n",
+    "print('Age:',person['age'])\n",
+    "print('city:',person['city'])\n",
+    "print('Hobbies:',person ['hobbies'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "425f9c2c-e815-4bd0-98ad-e67ab29e79f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "word frequencies: {'apple': 1}\n",
+      "word frequencies: {'apple': 1, 'banana': 1}\n",
+      "word frequencies: {'apple': 2, 'banana': 1}\n",
+      "word frequencies: {'apple': 2, 'banana': 1, 'orange': 1}\n",
+      "word frequencies: {'apple': 2, 'banana': 2, 'orange': 1}\n",
+      "word frequencies: {'apple': 3, 'banana': 2, 'orange': 1}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#part(b)\n",
+    "text=\"apple banana apple orange banana apple\"\n",
+    "words=text.split()\n",
+    "frequency={}\n",
+    "for  word in words:\n",
+    "    frequency[word]=frequency.get(word,0)+1\n",
+    "    print(\"word frequencies:\",frequency)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "e774be8a-ec8a-426a-a448-8ccd89323c52",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "current Inventory : {'apple': 5, 'banana': 20, 'orange': 30, 'grape': 15}\n"
+     ]
+    }
+   ],
+   "source": [
+    "#part(c)\n",
+    "Inventory ={\n",
+    "    \"apple\":50,\n",
+    "    \"banana\":20,\n",
+    "    \"orange\":30\n",
+    "}\n",
+    "Inventory[\"apple\"]=5\n",
+    "Inventory[\"grape\"]=15 \n",
+    "print(\"current Inventory :\",Inventory)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "db8b38ca-8ada-4154-899b-3e4491252d29",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "KeyError",
+     "evalue": "'category'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[29], line 8\u001b[0m\n\u001b[1;32m      6\u001b[0m category_count\u001b[38;5;241m=\u001b[39m{}\n\u001b[1;32m      7\u001b[0m \u001b[38;5;28;01mfor\u001b[39;00m order \u001b[38;5;129;01min\u001b[39;00m orders:\n\u001b[0;32m----> 8\u001b[0m     category\u001b[38;5;241m=\u001b[39morder[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mcategory\u001b[39m\u001b[38;5;124m'\u001b[39m]\n\u001b[1;32m      9\u001b[0m     Category_count[category ]\u001b[38;5;241m=\u001b[39m category_count\u001b[38;5;241m.\u001b[39mget(category,\u001b[38;5;241m0\u001b[39m)\u001b[38;5;241m+\u001b[39m\u001b[38;5;241m1\u001b[39m\n\u001b[1;32m     10\u001b[0m most_popular\u001b[38;5;241m=\u001b[39m\u001b[38;5;28mmax\u001b[39m(category_count,key\u001b[38;5;241m=\u001b[39mcategory_count\u001b[38;5;241m.\u001b[39mget)\n",
+      "\u001b[0;31mKeyError\u001b[0m: 'category'"
+     ]
+    }
+   ],
+   "source": [
+    "#part(d)\n",
+    "orders=[\n",
+    "    {'customer ':'alice','category ':'books'},\n",
+    "    {'customer ':'bob','category':'electronic'},\n",
+    "    {'customer ':'alice','category':'books'}\n",
+    "]\n",
+    "category_count={}\n",
+    "for order in orders:\n",
+    "    category=order['category']\n",
+    "    Category_count[category ]= category_count.get(category,0)+1\n",
+    "most_popular=max(category_count,key=category_count.get)\n",
+    "print(\"Most popular category :\",most_popular)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "ef3e480a-e0c3-48f9-acb5-320772e86009",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Student Grades: {'Alice': 85, 'Bob': 90, 'charlie': 78, 'David': 92}\n",
+      "Average Grades: 86.25\n"
+     ]
+    }
+   ],
+   "source": [
+    "part(e)\n",
+    "grades={\n",
+    "    'Alice':85,\n",
+    "    'Bob':90,\n",
+    "    'charlie':78,\n",
+    "    'David':92\n",
+    "}\n",
+    "average =sum(grades.values())/len(grades)\n",
+    "print(\"Student Grades:\",grades)\n",
+    "print(\"Average Grades:\",average)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2341b733-d727-4805-8b63-c1179973e578",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "part(f)\n",
+    "#Dictionary to store  product information\n",
+    "inventory ={}\n",
+    "#function to  add new products \n",
+    "def  add_product(name,quantity ,price):\n",
+    "    if name in inventory :\n",
+    "        print(f\"product'{name}' already exist.\")\n",
+    "    else:\n",
+    "         inventory[name]={\"quantity\":\n",
+    "\"quantity\",\"price\":\"price\" } \n",
+    "        \n",
+    "print(f\"product  '{name}' added  successfully.\")\n",
+    "#function to update product quantity\n",
+    "def  update_quantity(name, new_quantity):\n",
+    "    if name in inventory:\n",
+    "       inventory [name][\"quantity\"]=new_quantity \n",
+    "print(f\"quantity of '{name}' updated to {new_quantity}.\")\n",
+    "#function to calculate total  inventory value\n",
+    "def calculate_total_value():\n",
+    "    total=0 \n",
+    "    for product in inventory .values():\n",
+    "                 total += product[\"quantity\"]*product[\"price\"]\n",
+    "                 return  total\n",
+    "def low_stock_report(threshold):\n",
+    "        print(f'low stock  items(less than {threshold }):')\n",
+    "for name,details  in inventory .items():\n",
+    "                if details['quantity']<threshold:\n",
+    "                            print(f\"{name}:{details['quantity']}units\")\n",
+    "add_product(\"laptop\",5,1000)\n",
+    "add_product(\"Mouse\",50,20)\n",
+    "add_product(\"keyboard\",8,30)\n",
+    "updated_quantity(\"laptop\",3)\n",
+    "print(\"\\nTotal Inventory value:\",calculate_total_value())\n",
+    "print(\"\\nlow stock Report:\")\n",
+    "low_stock_report(threshold=10)\n",
+    "                            \n",
+    "               "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "980f6f5b-57b9-4579-899b-70db5ff24e5f",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (949733373.py, line 12)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;36m  Cell \u001b[0;32mIn[43], line 12\u001b[0;36m\u001b[0m\n\u001b[0;31m    average[name]=avg return averages\u001b[0m\n\u001b[0m                      ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "part(g)\n",
+    "students={\"Ali\":{\"Math\":85,\"science\":92,\"English\":78},\n",
+    "          \"sara\":{\"Math\":90,\"science\":88,\"English\":95},\n",
+    "          \"John\":{\"Math\":70,\"science \":75,\"English\":80},\n",
+    "          \"Alisha\":{\"Math\":88,\"science\":91,\"English\":84}\n",
+    "         }\n",
+    "#funcation to calculate average grade for  each student\n",
+    "def calculate_average(students):\n",
+    "    averages={}\n",
+    "for name,subjects in students.items():\n",
+    "    total=sum(subjects.values())\n",
+    "    avg=total/len(subjects)\n",
+    "    average[name]=avg return averages\n",
+    "#function to find higest and lowest grade in a specific  subject\n",
+    "def  subject_stats(students,subject):\n",
+    "    grades=[(name,subjects.get(subject,0)) for  name,subjects  in students.items()]\n",
+    "    highest=max(grades,key=lambda x:x[1])\n",
+    "    lowest=min(grades,key=lambda  x:x[1])\n",
+    "    return highest,lowest\n",
+    "#function to sort students by average grade\n",
+    "def sort_by_average(averages):\n",
+    "    return sorted(averages.items(),\n",
+    "key=lambda x:x[1],reverse=True)\n",
+    "#Example usage\n",
+    "averages=calculate_averages(students)\n",
+    "print(\"Average grades for each students:\")\n",
+    "for name,avg in averages.items():\n",
+    "    print(f\"{name}:{avg:.2f}\")\n",
+    "subject=\"Math\"\n",
+    "highest,lowest=subject_stats(students,subject)\n",
+    "print(f\"\\nIn {subject}:\")\n",
+    "print(f\"Highest:{highest[0]}with {highest[1]}\")\n",
+    "print(f\"lowest:{lowest[0]}with  {lowest[1]}\")\n",
+    "sorted_students=sort_by_average(averages)\n",
+    "print(\"\\nstudents sorted by average grade:\")\n",
+    "for name,avg in sorted_students:\n",
+    "   print(f\"{name}:{avg:.2f}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "afc92ab4-9681-4724-b965-2baf10c49b7d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "["
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "20ebae66-7621-4eb5-b5c1-90f4ccfd22c1",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
