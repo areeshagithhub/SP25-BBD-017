@@ -1,0 +1,375 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "26d0e78e-3fbf-4437-9bc6-e051002ea225",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#question no 1\n",
+    "class Person:\n",
+    "    def __init__(self, name, age, city):\n",
+    "        self.name = name\n",
+    "        self.age = age\n",
+    "        self.cit = cit\n",
+    "\n",
+    "    def __str__(self):\n",
+    "        return f\"Name: {self.name}, Age: {self.age}, City: {self.city}\"\n",
+    "        p1 = Person(\"Alice\", 30, \"New York\")\n",
+    "        print(p1)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "4e192374-79ea-462f-8e62-3c46891df2bb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#questioon no 2\n",
+    "class Car:\n",
+    "    def __init__(self, make, model, year):\n",
+    "        self.make = make\n",
+    "        self.model = model\n",
+    "        self.year = year\n",
+    "\n",
+    "    def __str__(self):\n",
+    "        return f\"{self.year} {self.make} {self.model}\"\n",
+    "        car1=car(\"honda\",19,2019)\n",
+    "        print(car1)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "70a5ea94-204c-4a7d-bb89-aad592219518",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Area: 78.53981633974483\n",
+      "Circumference: 31.41592653589793\n"
+     ]
+    }
+   ],
+   "source": [
+    "#QUESTION NO 3\n",
+    "import math\n",
+    "\n",
+    "class Circle:\n",
+    "    def __init__(self, radius):\n",
+    "        self.radius = radius\n",
+    "\n",
+    "    def area(self):\n",
+    "        \"\"\"Calculate and return the area of the circle.\"\"\"\n",
+    "        return math.pi * (self.radius ** 2)\n",
+    "\n",
+    "    def circumference(self):\n",
+    "        \"\"\"Calculate and return the circumference of the circle.\"\"\"\n",
+    "        return 2 * math.pi * self.radius\n",
+    "\n",
+    "\n",
+    "c = Circle(5)\n",
+    "print(\"Area:\", c.area())\n",
+    "print(\"Circumference:\", c.circumference())\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "845abf1d-2a8f-4bda-b495-641b110c1c9b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Area: 50\n",
+      "Perimeter: 30\n"
+     ]
+    }
+   ],
+   "source": [
+    "# QUESTION NO 4\n",
+    "class Rectangle:\n",
+    "    def __init__(self, length, width):\n",
+    "        self.length = length\n",
+    "        self.width = width\n",
+    "\n",
+    "    def area(self):\n",
+    "        \"\"\"Calculate and return the area of the rectangle.\"\"\"\n",
+    "        return self.length * self.width\n",
+    "\n",
+    "    def perimeter(self):\n",
+    "        \"\"\"Calculate and return the perimeter of the rectangle.\"\"\"\n",
+    "        return 2 * (self.length + self.width)\n",
+    "\n",
+    "r = Rectangle(10, 5)\n",
+    "print(\"Area:\", r.area())\n",
+    "print(\"Perimeter:\", r.perimeter())\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "e8f1d8c5-6d1d-49f5-ac78-d5bbcb74a2fe",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Average marks for Alice: 86.25\n"
+     ]
+    }
+   ],
+   "source": [
+    "# QUESTION NO 5\n",
+    "class Student:\n",
+    "    def __init__(self, name, roll_number, marks):\n",
+    "        self.name = name\n",
+    "        self.roll_number = roll_number\n",
+    "        self.marks = marks  \n",
+    "\n",
+    "    def calculate_average(self):\n",
+    "        if not self.marks:\n",
+    "            return 0 \n",
+    "        return sum(self.marks) / len(self.marks)\n",
+    "\n",
+    "# Example usage:\n",
+    "student1 = Student(\"Alice\", \"101\", [85, 90, 78, 92])\n",
+    "average = student1.calculate_average()\n",
+    "print(f\"Average marks for {student1.name}: {average:.2f}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "67c6ca94-8401-4b37-bf04-c8f12cd63ce0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Title: To Kill a Mockingbird\n",
+      "Author: Harper Lee\n",
+      "Publication Year: 1960\n"
+     ]
+    }
+   ],
+   "source": [
+    "# QUESTION NO 6\n",
+    "class Book:\n",
+    "    def __init__(self, title, author, publication_year):\n",
+    "        self.title = title\n",
+    "        self.author = author\n",
+    "        self.publication_year = publication_year\n",
+    "\n",
+    "# Example usage:\n",
+    "book1 = Book(\"To Kill a Mockingbird\", \"Harper Lee\", 1960)\n",
+    "print(f\"Title: {book1.title}\")\n",
+    "print(f\"Author: {book1.author}\")\n",
+    "print(f\"Publication Year: {book1.publication_year}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "3d3f09df-43f5-4133-82b1-4b964dd48b6f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Name: John Doe\n",
+      "Salary: 55000\n",
+      "Designation: Software Engineer\n"
+     ]
+    }
+   ],
+   "source": [
+    "# QUESTION NO 7\n",
+    "class Employee:\n",
+    "    def __init__(self, name, salary, designation):\n",
+    "        self.name = name\n",
+    "        self.salary = salary\n",
+    "        self.designation = designation\n",
+    "\n",
+    "# Example usage:\n",
+    "employee1 = Employee(\"John Doe\", 55000, \"Software Engineer\")\n",
+    "print(f\"Name: {employee1.name}\")\n",
+    "print(f\"Salary: {employee1.salary}\")\n",
+    "print(f\"Designation: {employee1.designation}\")\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "a2c5f78a-846c-4d3d-ba96-d408f272309f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Deposited: 500. New balance: 1500\n",
+      "Withdrew: 300. Remaining balance: 1200\n",
+      "Insufficient balance.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# QUESTION NO 8\n",
+    "class Bank:\n",
+    "    def __init__(self, name, account_number, balance=0):\n",
+    "        self.name = name\n",
+    "        self.account_number = account_number\n",
+    "        self.balance = balance\n",
+    "\n",
+    "    def deposit(self, amount):\n",
+    "        if amount > 0:\n",
+    "            self.balance += amount\n",
+    "            print(f\"Deposited: {amount}. New balance: {self.balance}\")\n",
+    "        else:\n",
+    "            print(\"Deposit amount must be positive.\")\n",
+    "\n",
+    "    def withdraw(self, amount):\n",
+    "        if amount > self.balance:\n",
+    "            print(\"Insufficient balance.\")\n",
+    "        elif amount <= 0:\n",
+    "            print(\"Withdrawal amount must be positive.\")\n",
+    "        else:\n",
+    "            self.balance -= amount\n",
+    "            print(f\"Withdrew: {amount}. Remaining balance: {self.balance}\")\n",
+    "\n",
+    "# Example usage:\n",
+    "account1 = Bank(\"Alice\", \"123456789\", 1000)\n",
+    "account1.deposit(500)\n",
+    "account1.withdraw(300)\n",
+    "account1.withdraw(1500)  # Should show insufficient balance\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "fb10675e-de11-48c2-9626-779e11d0cb96",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# QUESTION NO 9\n",
+    "import math\n",
+    "\n",
+    "# Base class\n",
+    "class Shape:\n",
+    "    def area(self):\n",
+    "        raise NotImplementedError(\"Subclasses must implement the area method.\")\n",
+    "\n",
+    "# Subclass for Circle\n",
+    "class Circle(Shape):\n",
+    "    def __init__(self, radius):\n",
+    "        self.radius = radius\n",
+    "\n",
+    "    def area(self):\n",
+    "        return math.pi * self.radius ** 2\n",
+    "\n",
+    "# Subclass for Rectangle\n",
+    "class Rectangle(Shape):\n",
+    "    def __init__(self, width, height):\n",
+    "        self\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "c081e60c-b39d-41cb-a112-16c7f9b54fb6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Buddy says: Woof\n",
+      "Whiskers says: Meow\n",
+      "Bessie says: Moo\n"
+     ]
+    }
+   ],
+   "source": [
+    "# QUESTION NO 10\n",
+    "# Base class\n",
+    "class Animal:\n",
+    "    def __init__(self, name):\n",
+    "        self.name = name\n",
+    "        self.sound = \"\"\n",
+    "\n",
+    "    def make_sound(self):\n",
+    "        return f\"{self.name} says: {self.sound}\"\n",
+    "\n",
+    "# Subclass for Dog\n",
+    "class Dog(Animal):\n",
+    "    def __init__(self, name):\n",
+    "        super().__init__(name)\n",
+    "        self.sound = \"Woof\"\n",
+    "\n",
+    "# Subclass for Cat\n",
+    "class Cat(Animal):\n",
+    "    def __init__(self, name):\n",
+    "        super().__init__(name)\n",
+    "        self.sound = \"Meow\"\n",
+    "\n",
+    "# Subclass for Cow\n",
+    "class Cow(Animal):\n",
+    "    def __init__(self, name):\n",
+    "        super().__init__(name)\n",
+    "        self.sound = \"Moo\"\n",
+    "\n",
+    "# Example usage:\n",
+    "animals = [\n",
+    "    Dog(\"Buddy\"),\n",
+    "    Cat(\"Whiskers\"),\n",
+    "    Cow(\"Bessie\")\n",
+    "]\n",
+    "\n",
+    "for animal in animals:\n",
+    "    print(animal.make_sound())\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0cff02d2-e55d-4876-8a4b-95e802817b2b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
